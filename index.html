@@ -1,96 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MICKEYMEDIA.KE</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #f8f8f8;
       margin: 0;
       padding: 0;
+      background: #f9f9f9;
     }
     header {
-      background-color: #333;
+      background-color: #222;
       color: white;
       padding: 1rem;
       text-align: center;
     }
     nav {
-      background-color: #444;
       display: flex;
       justify-content: center;
-      gap: 1rem;
+      background: #444;
       padding: 0.5rem;
     }
     nav a {
       color: white;
+      margin: 0 1rem;
       text-decoration: none;
     }
     section {
-      padding: 2rem;
-      max-width: 800px;
+      max-width: 900px;
       margin: auto;
+      padding: 2rem 1rem;
     }
-    form {
+    h2 {
+      color: #333;
+    }
+    .gallery img {
+      width: 100%;
+      max-width: 280px;
+      margin: 0.5rem;
+      border-radius: 8px;
+    }
+    .gallery {
       display: flex;
-      flex-direction: column;
-      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .form-group {
+      margin-bottom: 1rem;
     }
     input, textarea, button {
-      padding: 0.5rem;
+      width: 100%;
+      padding: 0.75rem;
+      margin-top: 0.5rem;
       font-size: 1rem;
     }
     footer {
-      background-color: #333;
+      background: #222;
       color: white;
       text-align: center;
       padding: 1rem;
-      margin-top: 2rem;
+    }
+    .social-links a {
+      margin: 0 0.5rem;
+      color: #444;
+      text-decoration: none;
+      font-size: 1.5rem;
+    }
+    .testimonial {
+      border-left: 4px solid #444;
+      margin: 1rem 0;
+      padding-left: 1rem;
+      color: #555;
+    }
+    .services ul {
+      list-style: none;
+      padding: 0;
+    }
+    .services li {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #ccc;
+    }
+    .logo {
+      max-width: 150px;
+      display: block;
+      margin: 1rem auto;
+    }
+    .whatsapp {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      color: white;
+      padding: 0.7rem 1rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
+
   <header>
-    <h1>Welcome to MICKEYMEDIA.KE</h1>
+    <img src="logo.png" alt="MICKEYMEDIA.KE Logo" class="logo" />
+    <h1>MICKEYMEDIA.KE</h1>
     <p>Capturing moments that last forever</p>
   </header>
 
   <nav>
-    <a href="#home">Home</a>
+    <a href="#about">About</a>
     <a href="#services">Services</a>
+    <a href="#gallery">Gallery</a>
     <a href="#contact">Contact</a>
+    <a href="#map">Find Us</a>
   </nav>
 
-  <section id="home">
-    <h2>Home</h2>
-    <p>We specialize in professional photography for events, portraits, and more. Whether it's a wedding, birthday, or corporate event — MICKEYMEDIA.KE has got you covered.</p>
+  <section id="about">
+    <h2>About Us</h2>
+    <p>At MICKEYMEDIA.KE, we are passionate about freezing time with the click of a shutter. Whether it's an event, a portrait, or a product shoot, our professional approach ensures every moment is captured beautifully.</p>
   </section>
 
-  <section id="services">
-    <h2>Our Services</h2>
+  <section id="services" class="services">
+    <h2>Our Services & Pricing</h2>
     <ul>
-      <li>Event Photography</li>
-      <li>Studio Portraits</li>
-      <li>Product Photography</li>
-      <li>Editing & Retouching</li>
+      <li>📸 Event Photography – Ksh 5,000/hour</li>
+      <li>🎞️ Studio Portraits – Ksh 2,500/session</li>
+      <li>📦 Product Photography – Ksh 3,500/project</li>
+      <li>🖼️ Editing & Retouching – Ksh 1,000/photo</li>
     </ul>
   </section>
 
+  <section id="gallery">
+    <h2>Photo Gallery</h2>
+    <div class="gallery">
+      <img src="https://via.placeholder.com/280x200" alt="Gallery 1">
+      <img src="https://via.placeholder.com/280x200" alt="Gallery 2">
+      <img src="https://via.placeholder.com/280x200" alt="Gallery 3">
+      <img src="https://via.placeholder.com/280x200" alt="Gallery 4">
+    </div>
+  </section>
+
+  <section id="testimonials">
+    <h2>What Clients Say</h2>
+    <div class="testimonial">"Professional and punctual. Our wedding photos were stunning!" – Jane & Alex</div>
+    <div class="testimonial">"Best studio experience ever. The portraits came out amazing!" – Brian M.</div>
+  </section>
+
   <section id="contact">
-    <h2>Contact Us</h2>
-    <p>Phone: +254798087384</p>
-    <form action="#" method="post">
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="email" name="email" placeholder="Your Email" required />
-      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
+    <h2>Book a Session</h2>
+    <form>
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required />
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+      <div class="form-group">
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+      </div>
+      <button type="submit">Send Booking</button>
     </form>
+    <p>Phone: +254798087384</p>
+    <div class="social-links">
+      <a href="#" title="Instagram">📸</a>
+      <a href="#" title="Facebook">📘</a>
+      <a href="#" title="Twitter">🐦</a>
+    </div>
+  </section>
+
+  <section id="map">
+    <h2>Our Studio Location</h2>
+    <iframe src="https://www.google.com/maps?q=nairobi,+kenya&output=embed" width="100%" height="300" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
   </section>
 
   <footer>
-    <p>&copy; 2025 MICKEYMEDIA.KE. All rights reserved.</p>
+    <p>&copy; 2025 MICKEYMEDIA.KE – All rights reserved.</p>
   </footer>
+
+  <a href="https://wa.me/254798087384" class="whatsapp" target="_blank">Chat on WhatsApp</a>
+
 </body>
 </html>
