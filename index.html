@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,7 +21,7 @@
     .services ul { list-style: none; padding: 0; }
     .services li { padding: 0.5rem 0; border-bottom: 1px solid #ccc; }
     .logo { max-width: 180px; display: block; margin: 1rem auto; }
-    .whatsapp { position: fixed; bottom: 20px; right: 20px; background-color: #25D366; color: white; padding: 0.7rem 1rem; border-radius: 50px; text-decoration: none; font-weight: bold; }
+    .whatsapp { position: fixed; bottom: 20px; right: 20px; background-color: #25D366; color: white; padding: 0.7rem 1rem; border-radius: 50px; text-decoration: none; font-weight: bold; z-index: 1000; } /* Added z-index */
   
 .intro-screen {
   display: flex;
@@ -66,6 +65,142 @@
     opacity: 0;
     visibility: hidden;
   }
+}
+
+/* --- Chatbot Specific Styles (from style.css provided previously) --- */
+/* You can also put these into a separate style.css file and link it */
+.chat-container {
+    width: 350px;
+    height: 500px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: fixed; /* Make it float on the page */
+    bottom: 90px; /* Adjust as needed, above WhatsApp button */
+    right: 20px; /* Adjust as needed */
+    z-index: 999; /* Ensure it's above other content but below intro-screen */
+    max-height: 80vh; /* Limit height on smaller screens */
+    border: 1px solid #ddd; /* A subtle border */
+}
+
+.chat-header {
+    background-color: #87001c; /* Changed to match your nav color */
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+    font-size: 1.1em;
+    cursor: pointer; /* To make it clickable for toggling */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-header h3 {
+    margin: 0;
+    font-size: 1.1em;
+}
+
+.chat-header .toggle-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5em;
+    cursor: pointer;
+    line-height: 1; /* For vertical alignment */
+}
+
+.chat-messages {
+    flex-grow: 1;
+    padding: 15px;
+    overflow-y: auto;
+    border-bottom: 1px solid #eee;
+    display: flex; /* Make messages stack nicely */
+    flex-direction: column;
+}
+
+.user-message, .bot-message {
+    margin-bottom: 10px;
+    padding: 8px 12px;
+    border-radius: 15px;
+    max-width: 80%;
+    word-wrap: break-word;
+}
+
+.user-message {
+    background-color: #dcf8c6; /* Light green */
+    align-self: flex-end;
+    margin-left: auto; /* Push to right */
+}
+
+.bot-message {
+    background-color: #e0e0e0; /* Light gray */
+    align-self: flex-start;
+    margin-right: auto; /* Push to left */
+}
+
+.chat-input {
+    display: flex;
+    padding: 15px;
+    border-top: 1px solid #eee;
+}
+
+.chat-input input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    outline: none;
+    margin-right: 10px;
+    width: auto; /* Override general input width */
+}
+
+.chat-input button {
+    background-color: #87001c; /* Changed to match your nav color */
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 15px;
+    cursor: pointer;
+    outline: none;
+    width: auto; /* Override general button width */
+}
+
+.chat-input button:hover {
+    background-color: #a0102e; /* Slightly lighter on hover */
+}
+
+/* Hidden state for the chat body */
+.chat-body-hidden {
+    display: none;
+}
+
+/* Chat bubble button */
+.chat-bubble {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #87001c; /* Your brand color */
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 1.8rem;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    z-index: 1001; /* Above WhatsApp and chatbot container */
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.chat-bubble:hover {
+    background-color: #a0102e;
 }
 
 </style>
@@ -171,17 +306,17 @@
     <h2>Follow us</h2>
     <p>Get directed to our socoal media accounts by clicking on the Icons below🫶</p>
   <div class="social-links">
-    <a href="https://www.linkedin.com/in/michael-ogada-a67341337?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" title="Linked in"><img src="Linked in.png" style="width:120px;height:100px;"</a>
+    <a href="https://www.linkedin.com/in/michael-ogada-a67341337?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" title="Linked in"><img src="Linked in.png" style="width:120px;height:100px;" alt="LinkedIn"/></a>
       
-    <a href="https://www.facebook.com/ogul.ogada.7" title="Facebook"><img src="Facebook.png" style="width:100px;height:100px;"</a>
+    <a href="https://www.facebook.com/ogul.ogada.7" title="Facebook"><img src="Facebook.png" style="width:100px;height:100px;" alt="Facebook"/></a>
       
-    <a href="https://x.com/OgadaOgada7?t=acHtVezo4MXeZzWU6ktvKA&s=08" title="X"><img src="xl.png" style="width:120px;height:100px;"</a>
+    <a href="https://x.com/OgadaOgada7?t=acHtVezo4MXeZzWU6ktvKA&s=08" title="X"><img src="xl.png" style="width:120px;height:100px;" alt="X"/></a>
       
-    <a href="https://www.tiktok.com/@mickeymedia37?_t=ZM-8w7rag5ezaA&_r=1" title="Tiktok"><img src="Tikt.png" style="width:120px;height:100px;"</a>
+    <a href="https://www.tiktok.com/@mickeymedia37?_t=ZM-8w7rag5ezaA&_r=1" title="Tiktok"><img src="Tikt.png" style="width:120px;height:100px;" alt="TikTok"/></a>
       
-    <a href="https://youtube.com/@mickymedia289?si=AxWx9FUJJoKYdOai" target="Youtube"> <img src="Yutube.png" alt="Youtube" style="width:120px;height:100px;"/>
+    <a href="https://youtube.com/@mickymedia289?si=AxWx9FUJJoKYdOai" target="Youtube"> <img src="Yutube.png" alt="Youtube" style="width:120px;height:100px;"/></a>
       
-    <a href="https://whatsapp.com/channel/0029VaIJlUH5Ejxrap2DeR06" target="Whatsapp channel"> <img src="Watsapp.png" alt="Whatsapp channel" style="width:170px;height:120px;"/>
+    <a href="https://whatsapp.com/channel/0029VaIJlUH5Ejxrap2DeR06" target="Whatsapp channel"> <img src="Watsapp.png" alt="Whatsapp channel" style="width:170px;height:120px;"/></a>
   </div>
 </section>
 
@@ -192,14 +327,32 @@
 
 <footer>
   <p>We love you so much❤️</p>
-  <p>&copy; 2025 MICKEYMEDIA.KE – All rights reserved.</p>
+  <p>© 2025 MICKEYMEDIA.KE – All rights reserved.</p>
 </footer>
+
+<div class="chat-container" id="chatbot-container" style="display: none;">
+    <div class="chat-header" id="chat-header">
+        <h3>Our Photography Assistant</h3>
+        <button class="toggle-btn" id="toggle-chat-btn">—</button>
+    </div>
+    <div class="chat-body" id="chat-body">
+        <div class="chat-messages" id="chat-messages">
+            <div class="bot-message">Hello! Welcome to MICKEYMEDIA.KE. How can I assist you today?</div>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="user-input" placeholder="Type your message...">
+            <button id="send-button">Send</button>
+        </div>
+    </div>
+</div>
+
+<div class="chat-bubble" id="chat-bubble">
+    💬 </div>
+
 
 <a href="https://wa.me/254798087384" class="whatsapp" target="_blank">Chat on WhatsApp</a>
 
-</div>
-
-<script>
+</div> <script>
   const typeSound = document.getElementById('typeSound');
 
   window.addEventListener('load', () => {
@@ -210,7 +363,106 @@
     document.querySelector('.intro-screen').style.display = 'none';
     document.querySelector('.main-site').style.display = 'block';
   }, 4500);
+
+  // --- Chatbot Specific JavaScript (Move to script.js for cleaner code) ---
+  // For demonstration, putting it here.
+  document.addEventListener('DOMContentLoaded', () => {
+      const chatBubble = document.getElementById('chat-bubble');
+      const chatbotContainer = document.getElementById('chatbot-container');
+      const chatHeader = document.getElementById('chat-header');
+      const chatBody = document.getElementById('chat-body');
+      const toggleChatBtn = document.getElementById('toggle-chat-btn');
+
+      const chatMessages = document.getElementById('chat-messages');
+      const userInput = document.getElementById('user-input');
+      const sendButton = document.getElementById('send-button');
+
+      const API_URL = 'http://127.0.0.1:5000/chat'; // Your Flask API endpoint
+
+      // Function to add messages to the chat interface
+      function addMessage(sender, message) {
+          const messageDiv = document.createElement('div');
+          messageDiv.classList.add(sender + '-message');
+          // Replace newline characters with <br> for HTML display of multiline responses
+          messageDiv.innerHTML = message.replace(/\n/g, '<br>'); 
+          chatMessages.appendChild(messageDiv);
+          chatMessages.scrollTop = chatMessages.scrollHeight; // Auto-scroll to bottom
+      }
+
+      // Function to send messages to the Flask backend
+      async function sendMessage() {
+          const message = userInput.value.trim();
+          if (message === '') return;
+
+          addMessage('user', message);
+          userInput.value = ''; // Clear input
+
+          try {
+              const response = await fetch(API_URL, {
+                  method: 'POST',
+                  headers: {
+                      'Content-Type': 'application/json'
+                  },
+                  body: JSON.stringify({ message: message })
+              });
+
+              const data = await response.json();
+              addMessage('bot', data.response);
+
+              // Basic handling for exit on frontend
+              if (message.toLowerCase().includes('bye') || message.toLowerCase().includes('exit')) {
+                  userInput.disabled = true;
+                  sendButton.disabled = true;
+                  userInput.placeholder = "Chat ended.";
+              }
+
+          } catch (error) {
+              console.error('Error sending message:', error);
+              addMessage('bot', 'Oops! Something went wrong. Please try again later.');
+          }
+      }
+
+      // Event listeners for sending messages
+      sendButton.addEventListener('click', sendMessage);
+      userInput.addEventListener('keypress', (event) => {
+          if (event.key === 'Enter') {
+              sendMessage();
+          }
+      });
+
+      // Toggle chatbot visibility
+      chatBubble.addEventListener('click', () => {
+          if (chatbotContainer.style.display === 'none' || chatbotContainer.style.display === '') {
+              chatbotContainer.style.display = 'flex';
+              chatBubble.style.display = 'none'; // Hide bubble when chat is open
+          }
+      });
+
+      // Minimize/maximize chatbot body
+      toggleChatBtn.addEventListener('click', () => {
+          chatBody.classList.toggle('chat-body-hidden');
+          if (chatBody.classList.contains('chat-body-hidden')) {
+              toggleChatBtn.textContent = '+'; // Change to plus when minimized
+              chatbotContainer.style.height = 'auto'; // Adjust container height
+              chatbotContainer.style.width = '350px'; // Maintain width
+              chatbotContainer.style.borderRadius = '8px';
+          } else {
+              toggleChatBtn.textContent = '—'; // Change to minus when maximized
+              chatbotContainer.style.height = '500px'; // Restore full height
+          }
+      });
+
+      // Hide chatbot when closing (using the X or - button in header)
+      chatHeader.addEventListener('dblclick', () => { // Double-click to close completely
+          chatbotContainer.style.display = 'none';
+          chatBubble.style.display = 'flex'; // Show bubble again
+      });
+
+      // Initial state: hide chatbot, show bubble
+      chatbotContainer.style.display = 'none';
+      chatBubble.style.display = 'flex';
+  });
 </script>
 
 </body>
-</html>
+          </html>
