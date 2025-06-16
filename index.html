@@ -208,7 +208,7 @@
 <body>
 
 <div class="intro-screen">
-  <h1 class="typewriter">MickeyMedia</h1>
+  <h1 class="typewriter">Mickeymedia</h1>
 </div>
 
 <audio id="typeSound" src="One of a kind2.mp3"></audio>
@@ -332,12 +332,43 @@
 
 <div class="chat-container" id="chatbot-container" style="display: none;">
     <div class="chat-header" id="chat-header">
-        <h3>Our Photography Assistant</h3>
+        <h3> Mickeymedia bot </h3></h3>
         <button class="toggle-btn" id="toggle-chat-btn">—</button>
     </div>
     <div class="chat-body" id="chat-body">
         <div class="chat-messages" id="chat-messages">
-            <div class="bot-message">Hello! Welcome to MICKEYMEDIA.KE. How can I assist you today?</div>
+            <div class="bot-message">Hello! Welcome to MICKEYMEDIA.KE. How can I assist you today? </div>
+  <div class="if any(keyword in user_input for keyword in ["bye", "goodbye", "exit", "quit", "thanks bye", "done"]):
+        return f"Thank you for visiting Mickeymedia! Have a wonderful day."/<div>
+    elif any(keyword in user_input for keyword in ["hi", "hello", "hey", "greetings", "good morning", "good afternoon"]):
+        return f"Hello! How can I help you today?"
+    elif any(keyword in user_input for keyword in ["hours", "open", "close", "time",7:00AM, "when are you open"]):
+        return "Our business hours are Sunday to Friday, 7 AM to 8 PM EAT. We are closed on Saturdays."
+    elif any(keyword in user_input for keyword in ["location", "address", "find", "where", "located", "office", "studio", "come to"]):
+        return f"Our studio is located in Kahawa Wendani, Kiambu, Kenya. Please contact us for the exact address or to schedule a visit."
+    elif any(keyword in user_input for keyword in ["services", "offer", "types", "do you do", "specializ", "shoot", "photograph", "what do you do"]):
+        return (
+            f"We specialize in a variety of photography services including:\n"
+            "  - Wedding Photography\n"
+            "  - Portrait Photography (family, individual, corporate headshots)\n"
+            "  - Event Photography\n"
+            "  - Commercial and Product Photography\n"
+            "What type of photography are you interested in?"
+        )
+    elif any(keyword in user_input for keyword in ["wedding", "matrimonial", "bride", "groom"]) and "photo" in user_input:
+        return f"For wedding photography, we offer comprehensive packages covering your special day. Please visit https://mickeymedia-02.netlify.app or call us at 0798087384 for a detailed consultation."
+    elif any(keyword in user_input for keyword in ["portrait", "headshot", "family", "individual", "child", "kids", "baby"]) and "photo" in user_input:
+         return f"Our portrait sessions are tailored to capture your unique personality or family moments. Find more details on https://mickeymedia-02.netlify.app or reach out to us."
+    elif any(keyword in user_input for keyword in ["event", "corporate", "party", "concert", "gathering"]) and "photo" in user_input:
+         return f"We cover various events, ensuring every significant moment is beautifully captured. Check our portfolio on https://mickeymedia-02.netlify.app or inquire directly."
+    elif any(keyword in user_input for keyword in ["commercial", "product", "business", "advertising"]) and "photo" in user_input:
+         return f"Elevate your brand with our professional commercial and product photography. Contact us for custom solutions at +254798087384."
+    elif any(keyword in user_input for keyword in ["price", "cost", "charge", "how much", "rate", "packages"]):
+        return f"Our pricing varies depending on the type of service and specific package requirements. Could you please tell me which service you are interested in (e.g., wedding, portrait)? We can then share more detailed package information."
+    elif any(keyword in user_input for keyword in ["book", "schedule", "appoint", "reserve", "session", "inquire", "contact"]):
+        return f"To book a session or inquire further, please visit our website at https://mickeymedia-02.netlify.app or call us directly at {phone_number}. We'd love to discuss your vision!"
+    else:
+        return f"I'm sorry, I didn't quite understand that. Can you please rephrase your question, or ask about our services, hours, or how to book?
         </div>
         <div class="chat-input">
             <input type="text" id="user-input" placeholder="Type your message...">
